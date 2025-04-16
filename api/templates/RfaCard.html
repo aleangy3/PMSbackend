@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{petition.case_no}}</title>
+</head>
+<body>
+<!--<script>-->
+<!--  function getText(value) {-->
+<!--      const tempElement = document.createElement("div");-->
+<!--      tempElement.innerHTML = value;-->
+<!--      const plainText = tempElement.textContent || tempElement.innerText || "";-->
+<!--      if (!plainText) {-->
+<!--        return "  ";-->
+<!--      }-->
+<!--      return plainText;-->
+<!--    }-->
+<!--</script>-->
+<div>
+      <div>
+        <div style="text-align: center;  ">
+          <h1>Case No : {{ petition.case_no  }}</h1>
+        </div>
+        <div>
+          <table style="text-align: center; border: 1px black solid; padding: 2px">
+            <tr>
+              <th style="background-color: #c6d9f1;">Received On</th>
+              <th style="background-color: #ffff00;" rowspan="2">{{ petition.title }}</th>
+              <th style="background-color: #31859c;">Contacted On</th>
+            </tr>
+            <tr>
+              <td style="background-color: #c6d9f1;">
+                {{ petition.created_at }}
+              </td>
+              <td style="background-color: #31859c;">
+                {{contact_on}}
+              </td>
+            </tr>
+          </table>
+          <br />
+
+          <table style="text-align: center; border: 1px solid black; padding: 2px; ">
+            <tr>
+              <th style="background-color: #afb7c1;">Unit</th>
+              <th style="background-color:  #bbc1b1">Course</th>
+              <th style="background-color:  #c9aa90">Status</th>
+
+              <th style="background-color:  #92b1ba">SOD</th>
+              <th style="background-color:  #b1ae9c">Pension</th>
+              <th style="background-color:  #cabaae">Residence</th>
+              <th style="background-color:  #aebec2">Parents</th>
+              <th style="background-color:  #9d9678">Son</th>
+              <th style="background-color:  #cabaae">Daughter</th>
+              <th style="background-color:  #ce8080">Spec Child</th>
+            </tr>
+            <tr>
+              <td style="background-color: #afb7c1;">{{petition.unit }}</td>
+              <td style="background-color:  #bbc1b1">{{ petition.course }}</td>
+              <td style="background-color:  #c9aa90">{{ petition.status }}</td>
+              <td style="background-color:  #92b1ba">{{petition.sod }}</td>
+              <td style="background-color:  #b1ae9c">{{petition.pensionData }}</td>
+              <td style="background-color:  #cabaae">{{petition.residence }}</td>
+              <td style="background-color:  #aebec2">{{petition.parentsData }}</td>
+              <td style="background-color:  #9d9678">{{ petition.sonData }}</td>
+              <td style="background-color:  #cabaae">{{petition.daughterData }}</td>
+              <td style="background-color:  #ce8080">{{ petition.specchildData }}</td>
+            </tr>
+          </table>
+          <br />
+          <table style="text-align: center; border: 1px solid black; padding: 2px">
+            <tr>
+              <th style="background-color: #bbc1b1;">Present Emp</th>
+              <th style="background-color: #ce8080;">PS Factor</th>
+
+              <th style="background-color: #c2c2c2;">Emp by W&R Dte</th>
+              <th style="background-color: #b1ae9c;">No of RFA Received</th>
+              <th style="background-color: #ce8080;">Compassion</th>
+            </tr>
+            <tr>
+              <td style="background-color: #bbc1b1;">{{ petition.presentempData }}</td>
+              <td style="background-color: #ce8080;">{{ petition.psfactorData }}</td>
+              <td style="background-color: #c2c2c2;">{{ petition.empwrDte }}</td>
+              <td style="background-color: #b1ae9c;">{{ petition.nofrfa }}</td>
+              <td style="background-color: #ce8080;">{{ petition.compassionData }}</td>
+            </tr>
+          </table>
+
+          <br />
+
+          <table style="text-align: center; border: 1px solid black; padding: 2px">
+            <tr>
+              <th style="background-color: #aebec2;">Request</th>
+              <th style="background-color: #afb7c1;">AG Remarks</th>
+              <th rowspan="2" style="background-color: #bbc1b1;">Benefit Altd</th>
+
+              <th style="background-color: #c2afaf;">Commercial</th>
+              <th style="background-color: #b1ae9c;">Resdl</th>
+              <th style="background-color: #b1ae9c;">Housing Dte</th>
+              <th style="background-color: #b1ae9c;">Fin Asst</th>
+            </tr>
+            <tr>
+              <td style="background-color: #aebec2;">{{petition.request }}</td>
+              <td style="background-color: #afb7c1;" >{{petition.agRemarks}}</td>
+              <td style="background-color: #c2afaf;">{{ petition.commercialData }}</td>
+              <td style="background-color: #b1ae9c;">{{ petition.resdlData }}</td>
+              <td style="background-color: #b1ae9c;">{{ petition.housingDte }}</td>
+              <td style="background-color: #b1ae9c;">{{ petition.finasstData }}</td>
+            </tr>
+          </table>
+          <br />
+        </div>
+
+        <div>
+          <div>
+            <table>
+              <tr>
+                <td colspan="8" style="background-color:#afbec3 ; border: 1px solid black; padding: 1px;">
+                  <h1 style="display: inline">Details :</h1>
+                  <p style="display: inline">{{ petition.details }} </p>
+                </td>
+                <!-- <td style="background-color:#afbec3" ></td> -->
+                <!-- <td >
+                <img align="right" :src="profileImage" rounded fluid alt="profile photo" width="250" height="150" />
+              </td> -->
+              </tr>
+            </table>
+          </div>
+          <br />
+        </div>
+<!--        <div>-->
+<!--          <div style="border: 1px solid black; padding: 1px; background-color:#afbec3 ;">-->
+<!--            <div>-->
+<!--              <h1 style="display: inline">Policy :</h1>-->
+<!--              <p style="display: inline">{{ procedure }}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div style="border: 1px solid black; padding: 1px; background-color:#92b1ba ">-->
+<!--            <div>-->
+<!--              <h1 style="display: inline">Precedence :</h1>-->
+<!--              <p style="display: inline">{{ precedence }}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div style="border: 1px solid black; padding: 1px; background-color:#cabaae ">-->
+<!--            <div>-->
+<!--              <h1 style="display: inline">Eligible :</h1>-->
+<!--              <p style="display: inline">{{ eligible }}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <br />-->
+<!--        </div>-->
+
+        <div>
+          <div style="border: 1px solid black; padding: 1px; text-align: center;background-color:#718fb5">
+            <div>
+              <h1 style="display: inline">Recoms</h1>
+
+            </div>
+          </div>
+<!--          <div style="border: 1px solid black; padding: 1px; background-color:#afb7c1">-->
+<!--            <div>-->
+<!--              <h1 style="display: inline">GSO-I :</h1>-->
+<!--              <p style="display: inline"> {{ gsoIRemarks }}</p>-->
+<!--              <h3 style="display: inline">-->
+<!--&lt;!&ndash;                {{&ndash;&gt;-->
+<!--&lt;!&ndash;                  petition.remarks_gso_1_by&ndash;&gt;-->
+<!--&lt;!&ndash;                  ? `(${this.petition.remarks_gso_1_by_data.appointment_name} - &ndash;&gt;-->
+<!--&lt;!&ndash;                                ${this.petition.remarks_gso_1_by_data.name})`&ndash;&gt;-->
+<!--&lt;!&ndash;                  : ""&ndash;&gt;-->
+<!--&lt;!&ndash;                }}&ndash;&gt;-->
+<!--              </h3>-->
+<!--            </div>-->
+          </div>
+<!--          <div style="border: 1px solid black; padding: 1px; background-color:#afb7c1">-->
+<!--            <div>-->
+<!--              <h1 style="display: inline">DD :</h1>-->
+
+<!--              <p style="display: inline"> {{ ddRemarks }}</p>-->
+<!--              <h3 style="display: inline">-->
+<!--&lt;!&ndash;                {{&ndash;&gt;-->
+<!--&lt;!&ndash;                  this.petition.remarks_dd_by&ndash;&gt;-->
+<!--&lt;!&ndash;                  ? `(${this.petition.remarks_dd_by_data.appointment_name} - &ndash;&gt;-->
+<!--&lt;!&ndash;                                ${this.petition.remarks_dd_by_data.name})`&ndash;&gt;-->
+<!--&lt;!&ndash;                  : ""&ndash;&gt;-->
+<!--&lt;!&ndash;                }}&ndash;&gt;-->
+<!--              </h3>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div style="border: 1px solid black; padding: 1px; padding-bottom: 70px; background-color:#9eaec1">
+            <div>
+              <h1 style="display: inline">Dir :</h1>
+
+              <p style="display: inline"> {{petition.dirRemarks }}</p>
+              <h3 style="display: inline">
+<!--                {{-->
+<!--                  this.petition.remarks_dir_by-->
+<!--                  ? `(${this.petition.remarks_dir_by_data.appointment_name} - -->
+<!--                                ${this.petition.remarks_dir_by_data.name})`-->
+<!--                  : ""-->
+<!--                }}-->
+              </h3>
+            </div>
+          </div>
+          <div style="border: 1px solid black; padding: 1px; padding-bottom: 70px; background-color:#b47979">
+            <div>
+              <h1 style="display: inline">DG :</h1>
+
+              <p style="display: inline"> {{petition.dgRemarks }}</p>
+              <h3 style="display: inline">
+<!--                {{-->
+<!--                  this.petition.remarks_dg_by-->
+<!--                  ? `(${this.petition.remarks_dg_by_data.appointment_name} - -->
+<!--                                ${this.petition.remarks_dg_by_data.name})`-->
+<!--                  : ""-->
+<!--                }}-->
+              </h3>
+            </div>
+          </div>
+          <br />
+        </div>
+
+        <div>
+          <div style="border: 1px solid black; padding: 1px;  padding-bottom: 35px; background-color:#fdeada ">
+            <div>
+              <h1 style="display: inline">AG Remarks :</h1>
+              <p style="display: inline">{{ petition.agRemarks }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

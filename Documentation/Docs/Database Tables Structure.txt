@@ -1,0 +1,31 @@
+USER:
+
+CREATE TABLE Users (
+    userID INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    isPremium BOOLEAN DEFAULT FALSE
+);
+ParkingSpots 
+CREATE TABLE ParkingSpots (
+    spotID INT PRIMARY KEY AUTO_INCREMENT,
+    location VARCHAR(100) NOT NULL,
+    isAvailable BOOLEAN DEFAULT TRUE,
+    isReserved BOOLEAN DEFAULT FALSE,
+    isCharging BOOLEAN DEFAULT FALSE
+);
+
+Reservations 
+CREATE TABLE Reservations (
+    reservationID INT PRIMARY KEY AUTO_INCREMENT,
+    userID INT NOT NULL,
+    spotID INT NOT NULL,
+    startTime DATETIME NOT NULL,
+    endTime DATETIME NOT NULL,
+    FOREIGN KEY (userID) REFERENCES Users(userID),
+    FOREIGN KEY (spotID) REFERENCES ParkingSpots(spotID)
+);
+
+
+
